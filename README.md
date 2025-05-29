@@ -1,8 +1,9 @@
-# Nhapmonxulianhso
+# Nhapmonxulianhso 
 BÁO CÁO XỬ LÝ ẢNH ( BÀI 1 -5)
 Họ và Tên: Lê Minh Hùng
 MSSV: 2174802010063
-Lớp: 71ITAI40803 GVHD: Nguyễn Thái Anh
+Lớp: NhapMonXuLyAnhSo-243_71ITAI40803_0101 
+GVHD: Nguyễn Thái Anh
 
 Ngôn ngữ: Python 3 Thư viện: PIL, numpy, matplotlib, scipy, skimage,...
 
