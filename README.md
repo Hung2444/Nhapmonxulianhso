@@ -4,6 +4,7 @@ Họ và Tên: Lê Minh Hùng
 MSSV: 2174802010063
 Lớp: 71ITAI40803 GVHD: Nguyễn Thái Anh
 Ngôn ngữ: Python 3 Thư viện: PIL, numpy, matplotlib, scipy, skimage,...
+
 -Bài 1: Tách màu RGB Tách ảnh thành 3 ảnh chỉ hiển thị màu Đỏ (R), Xanh Lá (G), và Xanh Dương (B).
 import các thư viện cần thiết như PIL.Image, numpy, matplotlib.pyplot
 Bước 1: Đọc ảnh đầu vào (img = Image.open('hinh1.jpg')
@@ -14,12 +15,14 @@ Bước 4: Lưu kết quả:
   green_img.save("green.jpg")
   blue_img.save("blue.jpg")
 Bước 5: hiển thị ảnh ( plt.figure(figsize=(12, 4)) )
+
 -Bài 2: 
 Bước 1: Mở ảnh (img = Image.open("hinh1.jpg"))
 Bước 2: Tách màu (r, g, b = img.split() )
 Bước 3: Hoán đổi kênh R và B ( swapped = Image.merge("RGB", (b, g, r)) )
 Bước 4: Lưu ảnh kết quả ( swapped.save("swapped.jpg") )
 Bước 5: Hiển thị ảnh trước và sau biến đổi ( plt.figure(figsize=(10, 4)) )
+
 - Bài 3
 Bước 1: Đọc ảnh và chuyển hóa giá trị RGB
 img = Image.open("hinh1.jpg")
