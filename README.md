@@ -3,6 +3,7 @@ BÁO CÁO XỬ LÝ ẢNH ( BÀI 1 -5)
 Họ và Tên: Lê Minh Hùng
 MSSV: 2174802010063
 Lớp: 71ITAI40803 GVHD: Nguyễn Thái Anh
+
 Ngôn ngữ: Python 3 Thư viện: PIL, numpy, matplotlib, scipy, skimage,...
 
 -Bài 1: Tách màu RGB Tách ảnh thành 3 ảnh chỉ hiển thị màu Đỏ (R), Xanh Lá (G), và Xanh Dương (B).
