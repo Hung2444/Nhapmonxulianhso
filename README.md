@@ -151,6 +151,98 @@ Bước 6: Hiển thị 3 ảnh một lần
             plt.show()
             images_to_show = []
 
+Bài 6:
+Bước 1: Tạo thư mục
+Bước 2: Lặp qua các ảnh trong thư mục
+Bước 3: Sử dụng bộ lọc 
+mean_img = uniform_filter(arr, size=(3, 3, 1))
+mean_img = Image.fromarray(mean_img.astype("uint8"))
+mean_img.save(os.path.join(output_folder, f"mean_{filename}"))
+
+Bước 4:Hiển thị kết quả
+
+
+Bài 7:
+Bước 1: Tạo thư mục
+Bước 2: Lặp qua các ảnh trong thư mục input
+Bước 3: Đọc ảnh và xử lý nhiễu
+( img = Image.open(input_path)
+arr = np.array(img)
+denoised = median_filter(arr, size=(3, 3, 1))
+)
+Bước 4: chuyển đổi ảnh sang màu xám
+( gray = rgb2gray(denoised) )
+Bước 5: áp dụng Sobel filter để phát hiện biên
+( plt.imsave(output_path, edges, cmap="gray") )
+Bước 6 : hiển thị kết quả
+
+
+Bài 8: 
+Bước 1: tạo thư mục
+Bước 2: xử lý ảnh trong thư mục input
+Bước 3: làm mượt và xáo trộn tên màu
+(
+denoised = uniform_filter(arr, size=(3, 3, 1))
+ch = [0, 1, 2]
+random.shuffle(ch)
+shuffled = denoised[:, :, ch]
+)
+Bước 4: lưu kết quả
+Bước 5: hiển thị ảnh theo nhóm
+(
+images_to_show.append((shuffled, f"RGB random {filename}"))
+
+if len(images_to_show) == 3:
+    plt.figure(figsize=(12, 4))
+    for i, (img_show, title) in enumerate(images_to_show):
+        plt.subplot(1, 3, i + 1)
+        plt.imshow(img_show)
+        plt.title(title)
+        plt.axis("off")
+    plt.tight_layout()
+    plt.show()
+    images_to_show = []
+)
+
+
+Bài 9:
+Bước 1: tạo thư mục
+Bước 2:tạo hàm sinh hue duy nhất
+(
+used_hues = []
+
+def generate_unique_hue():
+    """Sinh hue ngẫu nhiên không trùng với các hue đã sử dụng"""
+    while True:
+        new_hue = np.random.rand()  # Sinh hue ngẫu nhiên từ 0 đến 1
+        if all(abs(new_hue - h) > 0.05 for h in used_hues):  # Đảm bảo không trùng lặp
+            used_hues.append(new_hue)
+            return new_hue
+)
+
+Bước 3: Lặp qua các ảnh trong thư mục input
+Bước 4: Khử nhiễu và chuyển sang HSV
+(
+denoised = median_filter(arr, size=(3, 3, 1))
+
+hsv = np.zeros_like(denoised)
+for i in range(denoised.shape[0]):
+    for j in range(denoised.shape[1]):
+        hsv[i, j] = colorsys.rgb_to_hsv(*denoised[i, j])
+)
+
+Bước 5: Thay đổi hue và chuyển lại RGB
+(
+unique_hue = generate_unique_hue()
+hsv[:, :, 0] = unique_hue
+
+rgb = np.zeros_like(hsv)
+for i in range(hsv.shape[0]):
+    for j in range(hsv.shape[1]):
+        rgb[i, j] = colorsys.hsv_to_rgb(*hsv[i, j])
+)
+
+Bước 6: lưu kết quả và hiển thị kết quả
 
 
 
