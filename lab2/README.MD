@@ -1,4 +1,4 @@
-Họ tên: Lê Minh Hùng MSSV: 2174802010070 Lớp: 71ITAI40803 GVHD: Nguyễn Thái Anh
+Họ tên: Lê Minh Hùng MSSV: 2174802010063 Lớp: 71ITAI40803 GVHD: Nguyễn Thái Anh
 
  Câu 1 – Biến đổi ảnh cơ bản (phím I, G, L, H, C) Mục tiêu: Thực hiện các phép biến đổi cơ bản trên ảnh xám (grayscale).
 
